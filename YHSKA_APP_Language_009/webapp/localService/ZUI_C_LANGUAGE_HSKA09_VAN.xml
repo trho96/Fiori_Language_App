@@ -1,0 +1,184 @@
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/zui_c_language_hska09/$metadata"><edmx:Include Namespace="ZUI_C_LANGUAGE_HSKA09" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="zui_c_language_hska09_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="cds_zui_c_language_hska09.LanguageProcessorType/listing_id"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zui_c_language_hska09.LanguageProcessorType">
+				<Annotation Term="UI.DataPoint" Qualifier="Blacklisted">
+					<Record><PropertyValue Property="Value" Path="Blacklisted"/><PropertyValue Property="Title" String="Blacklisted"/><PropertyValue Property="TargetValue" Path="Blacklisted"/></Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="Rating">
+					<Record><PropertyValue Property="Value" Path="Rating"/><PropertyValue Property="Title" String="Rating"/><PropertyValue Property="TargetValue" Decimal="5"/><PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Rating"/></Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="name">
+					<Record><PropertyValue Property="Value" Path="name"/><PropertyValue Property="Title" String="Programming Language"/><PropertyValue Property="TargetValue" Path="name"/></Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="popularity">
+					<Record><PropertyValue Property="Value" Path="popularity"/><PropertyValue Property="Title" String="Popularity in %"/><PropertyValue Property="TargetValue" Decimal="100"/><PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Progress"/></Record>
+				</Annotation>
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Details"/><PropertyValue Property="ID" String="Language"/><PropertyValue Property="Target" AnnotationPath="@UI.Identification"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.HeaderFacets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Header"/>
+							<PropertyValue Property="ID">
+								<Annotation Term="Core.Messages">
+									<Collection>
+										<Record><PropertyValue Property="message" String="Facet id idHeader is duplicated"/><PropertyValue Property="severity" String="error"/></Record>
+									</Collection>
+								</Annotation>
+							</PropertyValue><PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Rating"/></Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="ID">
+								<Annotation Term="Core.Messages">
+									<Collection>
+										<Record><PropertyValue Property="message" String="Facet id idHeader is duplicated"/><PropertyValue Property="severity" String="error"/></Record>
+									</Collection>
+								</Annotation>
+							</PropertyValue><PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#popularity"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Programming Language"/><PropertyValue Property="TypeNamePlural" String="Programming Languages"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="listing_id"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Programming Language"/><PropertyValue Property="Value" Path="name"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Popularity"/><PropertyValue Property="Value" Path="popularity"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Trend"/><PropertyValue Property="Value" Path="trend"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Region"/><PropertyValue Property="Value" Path="region"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Rating"/><PropertyValue Property="Value" Path="Rating"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="BlackListed"/><PropertyValue Property="Value" Path="Blacklisted"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Developer"/><PropertyValue Property="Value" Path="Developer"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Publishing Year"/><PropertyValue Property="Value" Path="Publishing_Year"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Language ID"/><PropertyValue Property="Value" Path="language_id"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="name"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataFieldForAnnotation"><PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#name"/></Record>
+						<Record Type="UI.DataFieldForAnnotation"><PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#popularity"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="trend"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="region"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataFieldForAnnotation"><PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Rating"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Criticality" Path="Criticality"/><PropertyValue Property="Value" Path="Blacklisted"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataFieldForAction"><PropertyValue Property="Label" String="Set Blacklisted"/>
+							<PropertyValue Property="Action" String="">
+								<Annotation Term="Core.Messages">
+									<Collection>
+										<Record><PropertyValue Property="message" String="ERROR: Mandatory Value for Action not found"/><PropertyValue Property="severity" String="error"/></Record>
+									</Collection>
+								</Annotation>
+							</PropertyValue><PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="RegionFR">
+					<Record><PropertyValue Property="Text" String="FR"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="region"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="FR"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="RegionGB">
+					<Record><PropertyValue Property="Text" String="GB"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="region"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="GB"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="RegionIN">
+					<Record><PropertyValue Property="Text" String="IN"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="region"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="IN"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="RegionUS">
+					<Record><PropertyValue Property="Text" String="US"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="region"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="US"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="RegionDE">
+					<Record><PropertyValue Property="Text" String="DE"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="region"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="DE"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="RegionAll">
+					<Record><PropertyValue Property="Text" String="All Regions"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="region"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="ALL"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

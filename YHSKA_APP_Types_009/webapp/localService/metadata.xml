@@ -1,0 +1,59 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="cds_zui_c_types_hska09" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZC_TYPES_HSKA09Type" sap:label="Language projection view - Processor" sap:content-version="1">
+				<Key><PropertyRef Name="language_id"/></Key><Property Name="language_id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/><Property Name="name" Type="Edm.String" MaxLength="255" sap:label="Programming Language Name"/><Property Name="rating" Type="Edm.Byte" sap:label="Rating"/><Property Name="blacklisted" Type="Edm.String" MaxLength="1" sap:label="Blacklisted"/><Property Name="developer" Type="Edm.String" MaxLength="255" sap:label="Developer"/><Property Name="publishing_year" Type="Edm.String" MaxLength="4" sap:label="Publishing Year"/><Property Name="Criticality" Type="Edm.Byte"/></EntityType>
+			<ComplexType Name="DummyFunctionImportResult"><Property Name="IsInvalid" Type="Edm.Boolean" sap:label="TRUE"/></ComplexType>
+			<EntityContainer Name="cds_zui_c_types_hska09_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="ZC_TYPES_HSKA09" EntityType="cds_zui_c_types_hska09.ZC_TYPES_HSKA09Type" sap:searchable="true" sap:content-version="1"/>
+				<FunctionImport Name="acceptBlacklisted" ReturnType="cds_zui_c_types_hska09.DummyFunctionImportResult" m:HttpMethod="POST"
+					sap:action-for="cds_zui_c_types_hska09.ZC_TYPES_HSKA09Type"><Parameter Name="language_id" Type="Edm.Guid" Mode="In"/></FunctionImport>
+			</EntityContainer>
+			<Annotations Target="cds_zui_c_types_hska09.cds_zui_c_types_hska09_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zui_c_types_hska09.ZC_TYPES_HSKA09Type/blacklisted" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="cds_zui_c_types_hska09.ZC_TYPES_HSKA09Type/language_id" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="cds_zui_c_types_hska09.ZC_TYPES_HSKA09Type/name" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="cds_zui_c_types_hska09.ZC_TYPES_HSKA09Type/publishing_year" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="cds_zui_c_types_hska09.ZC_TYPES_HSKA09Type/rating" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations><atom:link rel="self"
+				href="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZUI_C_TYPES_HSKA09/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://aed5e2f4-3567-4c5a-9b63-1d7240a99365.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZUI_C_TYPES_HSKA09/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,95 @@
+ID: MTA_Homework_009
+_schema-version: '2.1'
+description: MTA Homework
+parameters:
+  deploy_mode: html5-repo
+version: 0.0.1
+modules:
+  - name: mta-homework-009-approuter
+    type: approuter.nodejs
+    path: mta-homework-009-approuter
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: MTA_Homework_009_html5_repo_runtime
+      - name: portal_resources_MTA_Homework_009
+      - name: phuc-nguyen
+      - name: uaa_MTA_Homework_009
+  - name: MTA_Homework_009_ui_deployer
+    type: com.sap.html5.application-content
+    path: MTA_Homework_009_ui_deployer
+    requires:
+      - name: MTA_Homework_009_html5_repo_host
+    build-parameters:
+      requires:
+        - name: YHSKA_APP_Language_009
+          artifacts:
+            - './*'
+          target-path: resources/YHSKA_APP_Language_009
+        - name: YHSKA_APP_Types_009
+          artifacts:
+            - './*'
+          target-path: resources/YHSKA_APP_Types_009
+  - name: YHSKA_APP_Types_009
+    type: html5
+    path: YHSKA_APP_Types_009
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
+  - name: FLP_Site_YHSKA_009
+    type: com.sap.portal.content
+    path: FLP_Site_YHSKA_009
+    parameters:
+      stack: cflinuxfs3
+      memory: 128M
+      buildpack: 'https://github.com/cloudfoundry/nodejs-buildpack/releases/download/v1.6.39/nodejs-buildpack-cflinuxfs3-v1.6.39.zip'
+    requires:
+      - name: portal_resources_MTA_Homework_009
+      - name: uaa_MTA_Homework_009
+      - name: MTA_Homework_009_html5_repo_host
+      - name: MTA_Homework_009_ui_deployer
+  - name: YHSKA_APP_Language_009
+    type: html5
+    path: YHSKA_APP_Language_009
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
+resources:
+  - name: MTA_Homework_009_html5_repo_runtime
+    parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
+  - name: MTA_Homework_009_html5_repo_host
+    parameters:
+      service-plan: app-host
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
+  - name: phuc-nguyen
+    parameters:
+      service-name: phuc-nguyen
+      protocol:
+        - ODataV2
+      service: abap-trial
+      service-plan: shared
+    type: org.cloudfoundry.existing-service
+  - name: uaa_MTA_Homework_009
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: portal_resources_MTA_Homework_009
+    parameters:
+      service-plan: standard
+      service: portal
+    type: org.cloudfoundry.managed-service

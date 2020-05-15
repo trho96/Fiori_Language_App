@@ -1,0 +1,74 @@
+{
+	"_version": "3.0.0",
+	"identification": {
+		"id": "e80a334e-0839-44f0-835c-c573ebc28185-1589542726604",
+		"entityType": "bundle"
+	},
+	"payload": {
+		"catalogs": [{
+			"_version": "3.0.0",
+			"identification": {
+				"id": "defaultCatalogId",
+				"title": "{{title}}",
+				"entityType": "catalog",
+				"i18n": "i18n/defaultCatalogId.properties"
+			},
+			"payload": {
+				"viz": []
+			}
+		}],
+		"groups": [{
+			"_version": "3.0.0",
+			"identification": {
+				"id": "yhska-app-language-009",
+				"title": "{{title}}",
+				"entityType": "group",
+				"i18n": "i18n/yhska-app-language-009.properties"
+			},
+			"payload": {
+				"viz": [{
+					"id": "namespace_009.yhska_app_types_009-1-1589544012348",
+					"appId": "namespace_009.yhska_app_types_009",
+					"vizId": "YHSKA_APP_Types_009-display"
+				}, {
+					"id": "namespace_009.yhska_app_language_009-1-1589548983621",
+					"appId": "namespace_009.yhska_app_language_009",
+					"vizId": "YHSKA_APP_Language_009-display"
+				}]
+			}
+		}],
+		"sites": [{
+			"_version": "3.0.0",
+			"identification": {
+				"id": "4eed23a0-ca61-4a97-9a46-9011ac6c64e4-1589542726604",
+				"entityType": "site",
+				"title": "SAP Fiori launchpad site on Cloud Foundry",
+				"description": "SAP Fiori launchpad site on Cloud Foundry, deployed from SAP Web IDE"
+			},
+			"payload": {
+				"config": {
+					"ushellConfig": {
+						"renderers": {
+							"fiori2": {
+								"componentData": {
+									"config": {
+										"applications": {
+											"Shell-home": {}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"groupsOrder": ["yhska-app-language-009"],
+				"sap.cloud.portal": {
+					"config": {
+						"theme.id": "sap_fiori_3",
+						"theme.active": ["sap_fiori_3", "sap_fiori_3_dark", "sap_belize_hcb", "sap_belize_hcw"]
+					}
+				}
+			}
+		}]
+	}
+}
